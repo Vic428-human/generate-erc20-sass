@@ -16,11 +16,18 @@
 //   },
 // };
 
+// require('@nomiclabs/hardhat-waffle');
+
 require("@nomicfoundation/hardhat-toolbox");
+
 // 在本地端啟用
 module.exports = {
   solidity: "0.8.0",
   networks: {
     hardhat: { chainId: 31337 },
+    // mumbai: {
+    //   url: '',
+    //   accounts: [''],
+    // },
   },
 };

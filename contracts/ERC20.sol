@@ -11,7 +11,7 @@ contract ERC20Generator is ERC20 {
         string memory _tokenSymbol // 代幣符號
     ) ERC20(_tokenName, _tokenSymbol) {
         // 調用父合約ERC20的構造函數，設置代幣名稱和符號
-        _mint(msg.sender, _initialSupply); // 給合約的創建者鑄造指定數量的代幣
+        _mint(msg.sender, _initialSupply); // 給合約的發起者鑄造指定數量的代幣
     }
 }
 
@@ -35,7 +35,7 @@ contract exERC20Generator is ERC20 {
     ) ERC20(_tokenName, _tokenSymbol) {
         owner = msg.sender;
         _mint(msg.sender, _initialSupply);
-        // rate = 10000000; ==>  1 ether = 100,000 tokens
+        rate = 10000000; // ==> 1 ether = N tokens
     }
 
     // 限制某些函數只能由合約的所有者調用
